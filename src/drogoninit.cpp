@@ -1,5 +1,5 @@
-#include <fmt/format.h>
 #include <drogoninit/drogoninit.h>
+#include <fmt/format.h>
 
 using namespace drogoninit;
 

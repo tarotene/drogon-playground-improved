@@ -17,12 +17,12 @@ cmake --build build/standalone
 Use the following commands from the project's root directory to run the test suite.
 
 ```bash
-cmake -S test -B build/test
-cmake --build build/test
-CTEST_OUTPUT_ON_FAILURE=1 cmake --build build/test --target test
+cmake -S tests -B build/tests
+cmake --build build/tests
+CTEST_OUTPUT_ON_FAILURE=1 cmake --build build/tests --target test
 
 # or simply call the executable:
-./build/test/DrogonInitTests
+./build/tests/DrogonInitTests
 ```
 
 To collect code coverage information, run CMake with the `-DENABLE_TEST_COVERAGE=1` option.
@@ -33,13 +33,13 @@ Use the following commands from the project's root directory to check and fix C+
 This requires _clang-format_, _cmake-format_ and _pyyaml_ to be installed on the current system.
 
 ```bash
-cmake -S test -B build/test
+cmake -S tests -B build/tests
 
 # view changes
-cmake --build build/test --target format
+cmake --build build/tests --target format
 
 # apply changes
-cmake --build build/test --target fix-format
+cmake --build build/tests --target fix-format
 ```
 
 See [Format.cmake](https://github.com/TheLartians/Format.cmake) for details.
@@ -73,7 +73,7 @@ cmake -S all -B build
 cmake --build build
 
 # run tests
-./build/test/DrogonInitTests
+./build/tests/DrogonInitTests
 # format code
 cmake --build build --target fix-format
 # run standalone
