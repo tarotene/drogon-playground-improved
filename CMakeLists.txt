@@ -33,6 +33,13 @@ CPMAddPackage(
   OPTIONS "FMT_INSTALL YES" # create an installable target
 )
 
+CPMAddPackage(
+    NAME drogon
+    VERSION 1.7.5
+    GITHUB_REPOSITORY drogonframework/drogon
+    GIT_TAG v1.7.5
+)
+
 # ---- Add source files ----
 
 # Note: globbing sources is considered bad practice as CMake's generators may not detect new files
@@ -57,6 +64,8 @@ target_include_directories(
   ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
                          $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>
 )
+
+target_link_libraries(${PROJECT_NAME} PRIVATE drogon)
 
 # ---- Create an installable target ----
 # this allows users to install and find the library via `find_package()`.
