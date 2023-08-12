@@ -1,5 +1,9 @@
 # Drogon Init
 
+## Owner's note (2023-08-13)
+
+Abandoned due to impossible build via FetchContent-based tools.
+
 ## Usage
 
 ### Build and run the standalone target
